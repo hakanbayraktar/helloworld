@@ -1,20 +1,13 @@
-name: remote ssh command
-on: [push]
-jobs:
+# .github/workflows/example-1.yml
 
-  build:
-    name: Build
+name: My First Manual Workflow
+on: [workflow_dispatch]
+jobs:
+  example:
+    name: Example Job
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using ssh key
-      uses: appleboy/ssh-action@v0.1.7
-      with:
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USERNAME }}
-        key: ${{ secrets.SSH_KEY }}
-        port: ${{ secrets.SSH_PORT }}
-        script: |
-            mkdir test 
-            cd test 
-            git clone https://github.com/hakanbayraktar/helloworld.git
-            echo 'Deployment successful to digital ocean' 
+      - name: Clone Repository
+        uses: actions/checkout@v2
+      - name: ...
+        run: ...
