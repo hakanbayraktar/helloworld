@@ -4,7 +4,16 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    
     steps:
+    - name: Set the value
+      id: step_one
+      run: |
+        echo "action_state=yellow" >> $GITHUB_ENV
+    - name: Use the value
+      id: step_two
+      run: |
+         echo "${{ env.action_state }}" # This will output 'yellow'
     - name: Checkout
       uses: actions/checkout@v2
     - name: Deployment
