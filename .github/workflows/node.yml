@@ -13,7 +13,9 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.SSH_PORT }}
         script: |
-            mkdir test 
+            #mkdir test 
             cd test 
-            git clone https://github.com/hakanbayraktar/helloworld.git
+            git checkout -f 
+            git pull origin master
+            #git clone https://github.com/hakanbayraktar/helloworld.git
             echo 'Deployment successful to digital ocean' 
