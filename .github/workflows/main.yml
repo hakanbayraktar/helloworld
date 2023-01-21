@@ -1,13 +1,19 @@
-# .github/workflows/example-1.yml
+name: env_tutorial
+## Triggers the workflow on when there is a push or 
+## pull request on the main branch
+on: [pull_request, push] 
 
-name: manuel
-on: [workflow_dispatch]
 jobs:
-  example:
-    name: Example Job
-    runs-on: ubuntu-latest
+  job1:
+    ## The type of runner that the job will run on
+    runs-on: ubuntu-latest 
     steps:
-      - name: Clone Repository
-        uses: actions/checkout@v2
-      - name: ...
-        run: ...
+      - name: step 1
+        run: |
+          echo "The job_id is: $GITHUB_JOB"   # reference the default environment variables
+          echo "The id of this action is: $GITHUB_ACTION"   # reference the default environment variables
+          echo "The run id is: $GITHUB_RUN_ID" 
+          echo "The GitHub Actor's username is: $GITHUB_ACTOR"
+      - name: step 2
+        run: |
+          echo "The run id is: $GITHUB_RUN_ID"
