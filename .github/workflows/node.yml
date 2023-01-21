@@ -2,7 +2,7 @@ name: remote ssh command
 on: [push]
 jobs:
   build:
-    name: Build
+    name: "{{GITHUB_REF_NAME}}"
     runs-on: ubuntu-latest
     
     steps:
