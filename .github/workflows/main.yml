@@ -1,6 +1,6 @@
 # .github/workflows/example-1.yml
 
-name: My First Manual Workflow
+name: ${GITHUB_REF_NAME}
 on: [workflow_dispatch]
 jobs:
   example:
