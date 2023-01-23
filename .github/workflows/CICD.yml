@@ -2,9 +2,9 @@ run-name: Deploy to @${{ github.ref_name }} by @${{ github.actor }}
 
 on:
   push:
-    branches: [ main, test ]
+    branches: [ test ]
   pull_request:
-    branches: [ main, test ]
+    branches: [ test ]
   workflow_dispatch:
 
 jobs:
