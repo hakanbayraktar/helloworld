@@ -1,4 +1,4 @@
-run-name: Deploy to ${{ github_ref_name }} by @${{ github.actor }}
+run-name: Deploy to ${{ input.github_ref_name }} by @${{ github.actor }}
 
 on:
   push:
